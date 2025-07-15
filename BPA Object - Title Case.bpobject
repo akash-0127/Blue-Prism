@@ -1,0 +1,153 @@
+﻿<process name="Title Case" version="1.0" bpversion="7.4.1.15931" narrative="Convert to Title Case – Converts the input string such that the first letter of each word is capitalized while the rest are in lowercase." byrefcollection="true" processrunningmessage="" disableversioning="false" type="object" runmode="Exclusive" preferredid="c2fe022a-e5ca-4c6e-823b-4fe0e1618fe3">
+  <appdef>
+    <element name="Application Root">
+      <id>02973dc4-abc9-4731-8e90-4aad8ed62350</id>
+      <type>Application</type>
+      <basetype>Application</basetype>
+      <datatype>unknown</datatype>
+      <diagnose>False</diagnose>
+    </element>
+  </appdef>
+  <view>
+    <camerax>0</camerax>
+    <cameray>0</cameray>
+    <zoom version="2">1.25</zoom>
+  </view>
+  <preconditions />
+  <endpoint narrative="" />
+  <subsheet subsheetid="948ab843-5f2b-4519-85cf-ddd92a31154d" type="CleanUp" published="True">
+    <name>Clean Up</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <subsheet subsheetid="ffdd02fe-b9f1-4e5a-b362-589a1a27556c" type="Normal" published="True">
+    <name>Title Case</name>
+    <view>
+      <camerax>0</camerax>
+      <cameray>0</cameray>
+      <zoom version="2">1.25</zoom>
+    </view>
+  </subsheet>
+  <stage stageid="200be904-e9e1-49b5-b1f3-a91cd4b87482" name="Start" type="Start">
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>90211e2e-0365-481d-a850-a52032d77c6c</onsuccess>
+  </stage>
+  <stage stageid="90211e2e-0365-481d-a850-a52032d77c6c" name="End" type="End">
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="aa2ff06d-9615-4050-bd07-197f8bb6e30a" name="Stage1" type="ProcessInfo">
+    <display x="-195" y="-105" w="150" h="90" />
+    <references>
+      <reference>System.dll</reference>
+      <reference>System.Data.dll</reference>
+      <reference>System.Xml.dll</reference>
+      <reference>System.Drawing.dll</reference>
+      <reference>C:\Program Files\Blue Prism Limited\Blue Prism Automate\HtmlAgilityPack.dll</reference>
+    </references>
+    <imports>
+      <import>System</import>
+      <import>System.Drawing</import>
+      <import>System.Data</import>
+    </imports>
+    <language>visualbasic</language>
+    <pythondllpath>
+    </pythondllpath>
+    <pythonenvpath>
+    </pythonenvpath>
+    <globalcode><![CDATA[]]></globalcode>
+    <code><![CDATA[]]></code>
+  </stage>
+  <stage stageid="9517a65e-a39e-4cac-87c8-b406106dcfa4" name="Clean Up" type="SubSheetInfo">
+    <subsheetid>948ab843-5f2b-4519-85cf-ddd92a31154d</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="981edf47-0c4e-4f09-b3f6-f85d8dff96b4" name="Start" type="Start">
+    <subsheetid>948ab843-5f2b-4519-85cf-ddd92a31154d</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <onsuccess>d0decbdd-001f-4502-83f1-d180e7b2de08</onsuccess>
+  </stage>
+  <stage stageid="d0decbdd-001f-4502-83f1-d180e7b2de08" name="End" type="End">
+    <subsheetid>948ab843-5f2b-4519-85cf-ddd92a31154d</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+  </stage>
+  <stage stageid="ebb4fb08-4614-478f-b2ae-43e43e1e53d4" name="Clean Up" type="Note">
+    <subsheetid>948ab843-5f2b-4519-85cf-ddd92a31154d</subsheetid>
+    <narrative>Clean Up Page
+
+This is an optional page where you might choose to perform some finalisation (or "cleanup") tasks as your business object is closed down.
+
+The cleanup action will be called automatically immediately after closing your business object at the end of a business process.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than before the disposal of the business object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="dec355c8-a652-4dd5-ad99-53f26478baa3" name="Initialise" type="Note">
+    <narrative>Initialise Page
+
+This is an optional page where you might choose to perform some initialisation tasks after your business object is loaded.
+
+The initialise action will be called automatically immediately after loading your business object.
+
+You will not be able to call this action from a business process, nor will it be called at any other time than after the creation of the object.</narrative>
+    <display x="-180" y="60" w="180" h="230" />
+  </stage>
+  <stage stageid="a13726ba-6c26-42f9-a4ad-e0873c536779" name="Title Case" type="SubSheetInfo">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <display x="-195" y="-105" w="150" h="90" />
+  </stage>
+  <stage stageid="243fdcad-ae03-40e3-848c-a60cb734e98d" name="Start" type="Start">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-105" />
+    <inputs>
+      <input type="text" name="InputText" stage="InputText" />
+    </inputs>
+    <onsuccess>a9bd30b3-3818-474d-8e43-33b14fb00793</onsuccess>
+  </stage>
+  <stage stageid="5e7bba7e-be5e-41cf-a0f7-f7183c18bb8c" name="End" type="End">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <loginhibit />
+    <display x="15" y="90" />
+    <outputs>
+      <output type="text" name="ResultText" stage="ResultText" />
+    </outputs>
+  </stage>
+  <stage stageid="a9bd30b3-3818-474d-8e43-33b14fb00793" name="Proper Case" type="Code">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <loginhibit />
+    <display x="15" y="-30" />
+    <inputs>
+      <input type="text" name="InputText" expr="[InputText]" />
+    </inputs>
+    <outputs>
+      <output type="text" name="ResultText" stage="ResultText" />
+    </outputs>
+    <onsuccess>5e7bba7e-be5e-41cf-a0f7-f7183c18bb8c</onsuccess>
+    <code><![CDATA[ResultText = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(InputText.ToLower())
+]]></code>
+  </stage>
+  <stage stageid="43c44b24-b33d-4771-8a7c-83092499c729" name="ResultText" type="Data">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <display x="-180" y="45" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+  <stage stageid="1c65dc88-2eb4-44b4-af7d-610ff3e5667c" name="InputText" type="Data">
+    <subsheetid>ffdd02fe-b9f1-4e5a-b362-589a1a27556c</subsheetid>
+    <loginhibit />
+    <display x="-180" y="0" />
+    <datatype>text</datatype>
+    <initialvalue />
+    <private />
+    <alwaysinit />
+  </stage>
+</process>
